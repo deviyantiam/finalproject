@@ -825,7 +825,3 @@ plt.show()
 ![png](output_43_1.png)
 
 
-
-```python
-
-```
