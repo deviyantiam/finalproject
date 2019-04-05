@@ -14,7 +14,6 @@ spark = SparkSession.builder \
     .config("spark.some.config.option", "some-value") \
     .getOrCreate()
 
-
 df = spark.read.format('com.databricks.spark.csv').\
     options(header='true', \
     inferschema='true').\
@@ -182,7 +181,6 @@ ax.set_xlabel('K')
 ax.set_ylabel('Cost')
 plt.show()
 
-
 # ## Silhouette method
 from pyspark.ml.evaluation import ClusteringEvaluator
 k_min=3
@@ -209,6 +207,10 @@ model = kmeans.fit(scaledData)
 # Make predictions
 predictions = model.transform(scaledData)
 predictions.show(5,False)
+# # center
+# center=model.clusterCenters()
+# print(center)
+# print(center[1])
 # # predictions.toPandas().to_csv('kmeans_rfm.csv',index=False)
 
 ## extract scaled rfm to different columns

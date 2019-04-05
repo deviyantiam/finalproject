@@ -120,6 +120,7 @@ plt.show()
 j=plt.subplot2grid((1,1),(0,0),projection='3d')
 for c in color_plot: # iterate over color dictionary keys
     df_temp = df_plot[df_plot['rfm_class'] == c]
+    print('number of segment',cust_label[c],'is',len(df_temp))
     j.scatter(xs=df_temp['r_sca'],ys=df_temp['f_sca'],zs=df_temp['m_sca'],s=30, c=color_plot[c],label=cust_label[c])
 j.set_xlabel('R')
 j.set_ylabel('F')
@@ -255,6 +256,7 @@ plt.show()
 j=plt.subplot2grid((1,1),(0,0),projection='3d')
 for c in color_plot: # iterate over color dictionary keys
     df_temp = df_plot[df_plot['prediction'] == c]
+    print('number of',cust_label[c],'is',len(df_temp))
     j.scatter(xs=df_temp['r_sca'],ys=df_temp['f_sca'],zs=df_temp['m_sca'],s=30, c=color_plot[c],label=cust_label[c])
 j.set_xlabel('R')
 j.set_ylabel('F')
